@@ -4,9 +4,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import pyautogui
 
-user = "garv.sachdeva18@gmail.com"
-user2 = "rajeevsac01@yahoo.com"
-pwd2 = "1324ddssdd"
 pwd = "troloddssdd"
 #driver = webdriver.Firefox()
 #driver.get("http://www.facebook.com")
@@ -37,12 +34,14 @@ for i in range (1,5):
 	email.find_element_by_id("click-to-copy").click() 
 	bit.find_element_by_link_text("Sign Up").click()
 	bit.find_element_by_id("user_email").send_keys(Keys.CONTROL, 'v') 
-	bit.find_element_by_id("user_email").send_keys(Keys.TAB , 'codingpro'+str(i) ,Keys.TAB , pwd ,Keys.TAB , pwd ,Keys.TAB , Keys.RETURN)
+	bit.find_element_by_id("user_email").send_keys(Keys.TAB , 'KOLPOL'+str(i) ,Keys.TAB , pwd ,Keys.TAB , pwd ,Keys.TAB , Keys.RETURN)
 	email.implicitly_wait(10)
 	while (pyautogui.pixelMatchesColor(1244, 278, (26, 188, 156)))==False:
 		email.implicitly_wait(3)
 		email.find_element_by_id("click-to-refresh").click()
 	email.find_element_by_link_text("Confirmation instructions").click()
+	while (pyautogui.pixelMatchesColor(878, 819, (106, 198, 219)))==False:
+		email.implicitly_wait(1)
 	email.find_element_by_link_text("Verify Email Address").click()
 	email.close()
 	bit.close()
